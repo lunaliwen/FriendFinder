@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FriendSurvey</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Survey Questions</h1>
+        <h2>About You</h2>
+        <form>
+            <div class="form-group">
+                <label for="exampleInputName1">Name(Required)</label>
+                <input type="name" class="form-control" id="Name" placeholder="Enter name">
+
+            </div>
+            <div class="form-group">
+                <label for="exampleInputLink1">Link to Photo Image(Required)</label>
+                <input type="link" class="form-control" id="imageLink" placeholder="Image link">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Q1: Your mind is always buzzing with unexplored ideas and plans.</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option>1(Strongly disagree)</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5(Strongly agree)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect2">Q2: Generally speaking, you rely more on your experience than
+                    your imagination.</label>
+                <select class="form-control" id="exampleFormControlSelect2">
+                    <option>1(Strongly disagree)</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5(Strongly agree)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect3">Q3: You find it easy to stay relaxed and focused even when there
+                    is some pressure.</label>
+                <select class="form-control" id="exampleFormControlSelect3">
+                    <option>1(Strongly disagree)</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5(Strongly agree)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect4">Q4: You rarely do something just out of sheer curiosity.</label>
+                <select class="form-control" id="exampleFormControlSelect4">
+                    <option>1(Strongly disagree)</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5(Strongly agree)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect5">Q5: People can rarely upset you.</label>
+                <select class="form-control" id="exampleFormControlSelect5">
+                    <option>1(Strongly disagree)</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5(Strongly agree)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect6">Q6: It is often difficult for you to relate to other people’s
+                    feelings.</label>
+                <select class="form-control" id="exampleFormControlSelect6">
+                    <option>1(Strongly disagree)</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5(Strongly agree)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect7">Q7: In a discussion, truth should be more important than
+                    people’s sensitivities.</label>
+                <select class="form-control" id="exampleFormControlSelect7">
+                    <option>1(Strongly disagree)</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5(Strongly agree)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect8">Q8: You rarely get carried away by fantasies and ideas.</label>
+                <select class="form-control" id="exampleFormControlSelect8">
+                    <option>1(Strongly disagree)</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5(Strongly agree)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect9">Q9: You think that everyone’s views should be respected
+                    regardless of whether they are supported by facts or not.</label>
+                <select class="form-control" id="exampleFormControlSelect9">
+                    <option>1(Strongly disagree)</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5(Strongly agree)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect10">Q10: You feel more energetic after spending time with a group
+                    of people.</label>
+                <select class="form-control" id="exampleFormControlSelect10">
+                    <option>1(Strongly disagree)</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5(Strongly agree)</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+
+    <script type="text/javascript">
+    
+    $(".submit").on("click", function(event) {
+    event.preventDefault();
+
+    // Here we grab the form elements
+    var newFriend= {
+      name: $("#Name").val().trim(),
+      photo: $("#imageLink").val().trim(),
+      scores: [
+          $("#exampleFormControlSelect1").val().trim(),
+          $("#exampleFormControlSelect2").val().trim(),
+          $("#exampleFormControlSelect3").val().trim(),
+          $("#exampleFormControlSelect4").val().trim(),
+          $("#exampleFormControlSelect5").val().trim(),
+          $("#exampleFormControlSelect6").val().trim(),
+          $("#exampleFormControlSelect7").val().trim(),
+          $("#exampleFormControlSelect8").val().trim(),
+          $("#exampleFormControlSelect9").val().trim(),
+          $("#exampleFormControlSelect10").val().trim(),
+      ]
+    };
+
+    console.log(newFriend);
+
+    $.post("/api/friends", newFriend,
+      function(data) {
+
+          alert("Yay! You are officially added!");
+
+        // Clear the form when submitting
+        $("#Name").val("");
+        $("#imageLink").val("");
+        $("#exampleFormControlSelect1").val("");
+        $("#exampleFormControlSelect2").val("");
+        $("#exampleFormControlSelect3").val("");
+        $("#exampleFormControlSelect4").val("");
+        $("#exampleFormControlSelect5").val("");
+        $("#exampleFormControlSelect6").val("");
+        $("#exampleFormControlSelect7").val("");
+        $("#exampleFormControlSelect8").val("");
+        $("#exampleFormControlSelect9").val("");
+        $("#exampleFormControlSelect10").val("");
+
+      });
+
+  });
+    
+    
+    
+    
+    </script>
+
+
+
+</body>
+
+</html>
