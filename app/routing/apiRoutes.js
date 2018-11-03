@@ -33,7 +33,9 @@ module.exports = function (app) {
 
         // req.body is available since we're using the body parsing middleware
         friendData.push(req.body);
-        res.json(true);
+        // res.json(true);
+
+        console.log(req.body);
 
         var totalDifference = [];
 
@@ -44,22 +46,31 @@ module.exports = function (app) {
         var currentUser = friendData[friendData.length - 1];
 
         for (var i = 0; i < friendData.length - 1; i++) {
+            var difference = 0;
             for (var j = 0; j < 10; j++) {
 
-                var difference = 0;
-                difference += Math.abs(currentUser.scores[j] - friendData[i].scores[j]);
+                
+                difference += Math.abs(parseInt(currentUser.scores[j]) - friendData[i].scores[j]);
             }
 
             totalDifference.push(difference);
+
+            console.log(totalDifference);
         }
-        minDifference = Math.min(totalDifference);
+        minDifference = Math.min(...totalDifference);
+
+        console.log(minDIfference);
 
         for (var z = 0; z < friendData.length - 1; z++) {
             if (totalDifference[z] == minDifference) {
                 matchedFriend = friendData[z];
-            }
 
-            alert(matchedFriend.name + "|" + matchedFriend.photo);
+                res.json(matchedFriend); 
+                console.log(matchedFriend); 
+            }
+            
         }
+    
+
     });
 };

@@ -8,7 +8,7 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <script src="https://code.jquery.com/jquery-3.3.1.js"> </script>
 </head>
 
 <body>
@@ -16,6 +16,7 @@
     <div class="container">
         <h1>Survey Questions</h1>
         <h2>About You</h2>
+        <h3>1 is strongly disagree, 5 is strongly agree</h3>
         <form>
             <div class="form-group">
                 <label for="exampleInputName1">Name(Required)</label>
@@ -30,11 +31,11 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Q1: Your mind is always buzzing with unexplored ideas and plans.</label>
                 <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1(Strongly disagree)</option>
+                    <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5(Strongly agree)</option>
+                    <option>5</option>
                 </select>
             </div>
 
@@ -42,11 +43,11 @@
                 <label for="exampleFormControlSelect2">Q2: Generally speaking, you rely more on your experience than
                     your imagination.</label>
                 <select class="form-control" id="exampleFormControlSelect2">
-                    <option>1(Strongly disagree)</option>
+                    <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5(Strongly agree)</option>
+                    <option>5</option>
                 </select>
             </div>
 
@@ -54,33 +55,33 @@
                 <label for="exampleFormControlSelect3">Q3: You find it easy to stay relaxed and focused even when there
                     is some pressure.</label>
                 <select class="form-control" id="exampleFormControlSelect3">
-                    <option>1(Strongly disagree)</option>
+                    <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5(Strongly agree)</option>
+                    <option>5</option>
                 </select>
             </div>
 
             <div class="form-group">
                 <label for="exampleFormControlSelect4">Q4: You rarely do something just out of sheer curiosity.</label>
                 <select class="form-control" id="exampleFormControlSelect4">
-                    <option>1(Strongly disagree)</option>
+                    <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5(Strongly agree)</option>
+                    <option>5</option>
                 </select>
             </div>
 
             <div class="form-group">
                 <label for="exampleFormControlSelect5">Q5: People can rarely upset you.</label>
                 <select class="form-control" id="exampleFormControlSelect5">
-                    <option>1(Strongly disagree)</option>
+                    <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5(Strongly agree)</option>
+                    <option>5</option>
                 </select>
             </div>
 
@@ -88,11 +89,11 @@
                 <label for="exampleFormControlSelect6">Q6: It is often difficult for you to relate to other people’s
                     feelings.</label>
                 <select class="form-control" id="exampleFormControlSelect6">
-                    <option>1(Strongly disagree)</option>
+                    <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5(Strongly agree)</option>
+                    <option>5</option>
                 </select>
             </div>
 
@@ -100,22 +101,22 @@
                 <label for="exampleFormControlSelect7">Q7: In a discussion, truth should be more important than
                     people’s sensitivities.</label>
                 <select class="form-control" id="exampleFormControlSelect7">
-                    <option>1(Strongly disagree)</option>
+                    <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5(Strongly agree)</option>
+                    <option>5</option>
                 </select>
             </div>
 
             <div class="form-group">
                 <label for="exampleFormControlSelect8">Q8: You rarely get carried away by fantasies and ideas.</label>
                 <select class="form-control" id="exampleFormControlSelect8">
-                    <option>1(Strongly disagree)</option>
+                    <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5(Strongly agree)</option>
+                    <option>5</option>
                 </select>
             </div>
 
@@ -123,11 +124,11 @@
                 <label for="exampleFormControlSelect9">Q9: You think that everyone’s views should be respected
                     regardless of whether they are supported by facts or not.</label>
                 <select class="form-control" id="exampleFormControlSelect9">
-                    <option>1(Strongly disagree)</option>
+                    <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5(Strongly agree)</option>
+                    <option>5</option>
                 </select>
             </div>
 
@@ -135,11 +136,11 @@
                 <label for="exampleFormControlSelect10">Q10: You feel more energetic after spending time with a group
                     of people.</label>
                 <select class="form-control" id="exampleFormControlSelect10">
-                    <option>1(Strongly disagree)</option>
+                    <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5(Strongly agree)</option>
+                    <option>5</option>
                 </select>
             </div>
 
@@ -150,7 +151,7 @@
 
     <script type="text/javascript">
     
-    $(".submit").on("click", function(event) {
+    $(".btn").on("click", function(event) {
     event.preventDefault();
 
     // Here we grab the form elements
@@ -172,11 +173,10 @@
     };
 
     console.log(newFriend);
+    alert("Yay! You are officially added!");
 
     $.post("/api/friends", newFriend,
       function(data) {
-
-          alert("Yay! You are officially added!");
 
         // Clear the form when submitting
         $("#Name").val("");
@@ -192,12 +192,36 @@
         $("#exampleFormControlSelect9").val("");
         $("#exampleFormControlSelect10").val("");
 
-      });
+        matchedFriend = data
 
+        // Here we then log the tableData to console, where it will show up as an object.
+        console.log(matchedFriend);
+        console.log("------------------------------------");
+
+        console.log(matchedFriend.name + "|" + matchedFriend.photo);
+
+      });
+      
+    //   runFriendQuery(); 
+  
   });
+//   function runFriendQuery() {
+//     // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
+//     $.ajax({ url: "/api/friends", method: "POST" })
+//       .then(function(matchedFriend) {
+
+//         // Here we then log the tableData to console, where it will show up as an object.
+//         console.log(matchedFriend);
+//         console.log("------------------------------------");
+
+//         console.log(matchedFriend.name + "|" + matchedFriend.photo);
+//         });
+
+//     };
     
-    
-    
+
+
+
     
     </script>
 
